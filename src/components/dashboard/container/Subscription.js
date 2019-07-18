@@ -57,7 +57,7 @@ class Subscription extends React.Component {
 
                     setOfSubComics = newUpdate.map((comic) => {
                         if (comic === null) {
-                            return <div key={Math.floor((Math.random() * 100) + 1)}>
+                            return <div key={Math.floor((Math.random() * 100) + 1)} style={{ paddingBottom: '18px' }}>
                                 <Link>
                                     <img src={ImagePlaceholder} alt='Comic Cover' className='filter-image'/>
                                     <p>Empty</p>
@@ -67,7 +67,7 @@ class Subscription extends React.Component {
                             </div>
 
                         } else {
-                            return <div key={comic._id}>
+                            return <div key={comic._id} style={{ paddingBottom: '18px' }}>
                                 <Link to={`/comic/${comic._id}`}>
                                     <img src={comic.comicImage} alt='Comic Cover' className='filter-image'/>
                                     <p>{comic.comicTitle}</p>
