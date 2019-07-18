@@ -51,9 +51,9 @@ class Footer extends Component {
                                 <h5>NEWSLETTER</h5>
                                 <p>Catch all our latest news and updates</p>
 
-                                <form className="my-form-inline">
+                                <form className="my-form-inline" disabled>
                                     <input type="email" className="" placeholder="YOUR EMAIL"/>
-                                    <button type="submit" className="">SIGN UP</button>
+                                    <button disabled type="submit" className="">SIGN UP</button>
                                 </form>
 
                             </div>

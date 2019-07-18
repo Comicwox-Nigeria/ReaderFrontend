@@ -85,11 +85,11 @@ class SimpleSlider extends React.Component {
         return (
             <React.Fragment>
 
-                <div role="navigation" className="navbar navbar-expand-lg navbar-dark rep-nav" style={{ backgroundColor: 'black', height:'90px', textAlign: 'center', paddingBottom: this.state.expandme ? '280px' : '0px' }}>
-                    <button style={{ border: '4px solid red' }} onClick={this.expandNav} className="navbar-toggler" type="button" data-toggle="collapse"
+                <div role="navigation" className="navbar navbar-expand-lg navbar-dark rep-nav" style={{ backgroundColor: 'black', height:'70px', textAlign: 'center', paddingBottom: this.state.expandme ? '280px' : '0px' }}>
+                    <button style={{ border: '2px solid red' }} onClick={this.expandNav} className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false"
                             aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"  ></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarsExample05">

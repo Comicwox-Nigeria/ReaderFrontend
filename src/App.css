@@ -295,28 +295,81 @@ nav {
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
+@media only screen and (max-width: 862px){
+    .carousel {
+        height: 20em !important;
+    }
+    .carousel-item {
+        height: 20em !important;
+    }
+    .carousel-item img {
+        height: 20em !important;
+    }
+    .prev-icon img {
+        height: 35px !important;
+        width: 35px !important;
+    }
+    .next-icon img {
+        height: 35px !important;
+        width: 35px !important;
+    }
+    .carousel-caption-h1{
+        font-size: 20px;
+        opacity: 0.9;
+    }
 
-/* Carousel base class */
+
+
+    .carousel-caption-p{
+        /*font-weight: bold;*/
+        font-size: 8x;
+        margin-top: -20px !important;
+        margin-bottom: 48px !important;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .carousel-caption {
+        bottom: 0rem !important;
+        z-index: 15;
+    }
+
+    .carousel-indicators {
+        margin-top: 40px !important;
+    }
+
+}
+
+@media only screen and (max-width: 438px){
+    .carousel {
+        height: 15em !important;
+    }
+    .carousel-item {
+        height: 15em !important;
+    }
+    .carousel-item img {
+        height: 15em !important;
+    }
+}
+
 .carousel {
     margin-top: 65px;
+    height: 25em;
     /*margin-bottom: 4rem;*/
 }
-/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     bottom: 3rem;
     z-index: 15;
 }
 
-/* Declare heights because of positioning of img element */
 .carousel-item {
-    height: 32rem;
+    height: 25em;
 }
-.carousel-item > img {
+.carousel-item img {
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 100%;
-    height: 32rem;
+    width: 100%;
+    height: 25em;
 }
 
 .carousel-indicators ol li {
@@ -363,14 +416,14 @@ nav {
 
 .carousel-caption-h1{
     font-weight: bold;
-    font-size: 30px;
-    letter-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .carousel-caption-p{
     /*font-weight: bold;*/
-    font-size: 18px;
+    font-size: 10x;
     margin-top: -20px !important;
     font-family: 'Montserrat', sans-serif;
 }
@@ -549,6 +602,40 @@ nav {
          FOOTER STYLING
 
 ========================================*/
+@media only screen and (max-width: 991px){
+    .first-side {
+        border-top-left-radius: 50px !important;
+    }
+    .second-side {
+        border-top-right-radius: 50px !important;
+    }
+    .third-side {
+        border-top-right-radius: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .first-side {
+        border-top-left-radius: 50px !important;
+        border-top-right-radius: 50px !important;
+    }
+    .second-side {
+        border-top-right-radius: 0px !important;
+    }
+    .third-side {
+        border-top-right-radius: 0px !important;
+    }
+}
+
+.first-side {
+    border-top-left-radius: 50px ;
+}
+.second-side {
+    border-top-right-radius: 0px;
+}
+.third-side {
+    border-top-right-radius: 50px;
+}
 
 .first-side {
     background-color: rgba(0,0,0,0.9);
@@ -896,7 +983,7 @@ nav {
 
 
     .my-filters li a{
-        margin-top: 10px;
+        margin-top: 0px;
         font-size: 18px;
         letter-spacing: 2px;
         padding: 50px 30px !important;
@@ -967,6 +1054,119 @@ nav {
     .myrow {
         margin: 0 auto;
         max-width: 95%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 473px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 70% !important;
+    }
+
+}
+
+@media screen and (max-width: 463px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 88% !important;
+        margin-left: 5px !important;
+    }
+
+}
+
+@media screen and (max-width: 463px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 90% !important;
+        margin-left: 5px !important;
+    }
+
+}
+
+@media screen and (max-width: 445px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 95% !important;
+        margin-left: -3px !important;
+    }
+
+}
+
+@media screen and (max-width: 412px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 98% !important;
+        margin-left: -10px !important;
+    }
+
+}
+
+@media screen and (max-width: 391px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 100% !important;
+        margin-left: -10px !important;
+    }
+
+}
+
+@media screen and (max-width: 383px) {
+    .regular {
+        margin-top: 50px;
+        /*margin-left: 2%;*/
+        padding-left: 2%;
+        /*width: 90%;*/
+    }
+
+    .myrow {
+        margin: 0 auto;
+        max-width: 90em !important;
+        margin-left: 0px !important;
     }
 
 }
@@ -1860,7 +2060,7 @@ nav {
 }
 
 
-@media screen and (min-width: 200px) and (max-width: 357px){
+@media screen and (min-width: 200px) and (max-width: 372px){
     .regular {
         margin-top: 50px;
         padding-right: 2px !important;

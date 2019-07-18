@@ -7,6 +7,7 @@ import Background3 from '../common/ulofyu.jpg';
 import PrevIcon from '../common/images/icon/back.png';
 import NextIcon from '../common/images/icon/next.png';
 
+
 // import PropTypes from 'prop-types';
 
 class Slider extends Component {
@@ -27,7 +28,7 @@ class Slider extends Component {
                         <img src={Background1} alt='Background 1'/>
                         <div className="my-container-1">
                             <div className="carousel-caption text-center">
-                                <h1 className="carousel-caption-h1">New Releases</h1>
+                                <h6 className="carousel-caption-h1">New Releases</h6>
                                 <br/>
                                 <p className="carousel-caption-p" style={{ color: 'white'}}>Action | Drama | Fantasy</p>
                             </div>
@@ -39,7 +40,7 @@ class Slider extends Component {
                         <img src={Background2} alt='Background 2'/>
                         <div className="my-container-1">
                             <div className="carousel-caption text-center">
-                                <h1 className="carousel-caption-h1">Catch up with your FAV</h1>
+                                <h6 className="carousel-caption-h1">Catch up with your FAV</h6>
                                 <br/>
                                 <p className="carousel-caption-p" style={{ color: 'white'}}>Mystery | Adventure | Comedy</p>
                             </div>
@@ -51,7 +52,6 @@ class Slider extends Component {
                         <img src={Background3} alt='Background 3'/>
                         <div className="my-container-1">
                             <div className="carousel-caption text-center">
-                                <h1 className="carousel-caption-h1"></h1>
                                 <br/>
                                 <p className="carousel-caption-p" style={{ color: 'white'}}>Action | Drama | Fantasy</p>
                             </div>
@@ -72,6 +72,7 @@ class Slider extends Component {
                 </div>
 
             </div>
+
         );
     }
 }
@@ -79,3 +80,5 @@ class Slider extends Component {
 Slider.propTypes = {};
 
 export default Slider;
+
+
