@@ -861,8 +861,8 @@ body {
 }
 
 .third-side {
-    background-image: url('./bow.jpg');
-    background-position: center;
+    background-image: url('./thirdside.jpg');
+    background-position: top;
     background-repeat:no-repeat;
     background-size: cover;
     height: 350px;
