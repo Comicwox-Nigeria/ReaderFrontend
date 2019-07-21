@@ -6,11 +6,18 @@ import Logo from '../common/images/logo/ComicwoxTransparentv2.png';
 
 import { connect } from 'react-redux';
 
+import exit from './exit.svg';
+import ham from './list-menu.png';
+
+import DrawerToggleButton from "./DrawerToggleButton";
+
 // import PropTypes from 'prop-types';
 
 class Navbar extends Component {
 
     render() {
+
+        const { drawerClickHandler } = this.props;
 
         const isAuthenticated = this.props.auth.isAuthenticated;
 
@@ -29,18 +36,40 @@ class Navbar extends Component {
         return (
 
             <Fragment>
-                <header>
-                    <nav className="site-header fixed-top">
+
+                <header className='toolbar'>
+
+                    <nav className='toolbar_navigation'>
+
+                        <div className='toolbar_logo'><Link to='/'><img src={Logo} alt='ComicWox Logo' className="img-fluid mylogo"/></Link></div>
+                        <div className='spacer'/>
+                        <div className='toolbar_navigation_items'>
+                            <ul className='first-layer-nav'>
+                                <li><Link to='/'>HOME</Link></li>
+                                {/*<li><Link to="/studios">STUDIOS</Link></li>*/}
+                                <li><a href="http://comicwoxblog.com/" target="_blank">BLOG</a></li>
+                                <li><Link to="/about-us">ABOUT</Link></li>
+                                <li><Link to="/contact-us">CONTACT</Link></li>
+                                {navbarList}
+                            </ul>
+                        </div>
+
+                        <div className='toolbar_toggle_button'>
+                            <DrawerToggleButton click={drawerClickHandler}/>
+                        </div>
+                    </nav>
+
+                    {/*<nav className="site-header fixed-top">
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-4">
                                     <img src={Logo} alt='ComicWox Logo' className="img-fluid mylogo"/>
                                 </div>
 
-                                <div className="col-7">
+                                <div className="col-7 somenav">
                                     <ul className="first-layer-nav">
                                         <li><Link to='/'>HOME</Link></li>
-                                        {/*<li><Link to="/studios">STUDIOS</Link></li>*/}
+                                        <li><Link to="/studios">STUDIOS</Link></li>
                                         <li><a href="http://comicwoxblog.com/" target="_blank">BLOG</a></li>
                                         <li><Link to="/about-us">ABOUT</Link></li>
                                         <li><Link to="/contact-us">CONTACT</Link></li>
@@ -49,16 +78,16 @@ class Navbar extends Component {
                                 </div>
                             </div>
                             <div className="button mybtn">
-                                <a className="btn-open"></a>
+                                <a className="btn-open"><img src={ham} alt='ComicWox Logo' style={{ width: '25px', height: '25px', marginTop: '-10px' }}/></a>
                             </div>
                         </div>
-                    </nav>
+                    </nav>*/}
 
-                    <div className="overlay">
+                    {/*<div className="overlay">
                         <div className="wrap">
                             <ul className="wrap-nav">
                                 <li><Link to='/'>HOME</Link></li>
-                                {/*<li><Link to="/studios">STUDIOS</Link></li>*/}
+                                <li><Link to="/studios">STUDIOS</Link></li>
                                 <li><a href="http://comicwoxblog.com/" target="_blank">BLOG</a></li>
                                 <li><Link to="/about-us">ABOUT</Link></li>
                                 <li><Link to="/contact-us">CONTACT</Link></li>
@@ -82,7 +111,8 @@ class Navbar extends Component {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div>*/}
+
                 </header>
             </Fragment>
         );

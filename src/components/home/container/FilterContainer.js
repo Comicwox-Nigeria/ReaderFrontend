@@ -19,7 +19,7 @@ class SimpleSlider extends React.Component {
 
         this.state = {
             expandme: false,
-            display: 'Fresh Update',
+            display: 'New Uploads',
             search: ''
         };
 
@@ -96,26 +96,26 @@ class SimpleSlider extends React.Component {
                         <ul className="mr-auto my-filters" >
 
                             <li className={classnames('nav-item', {
-                                'active': this.checkView('Fresh Update')
-                            })}
-                                onClick={this.pickDisplay.bind(this, 'Fresh Update')}>
-                                {/*This is using the Fresh Update Component because I am to tired to change it*/}
-                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Fresh Update')}>NEW UPLOADS</a>
-                            </li>
-
-                            <li className={classnames('nav-item', {
                                 'active': this.checkView('New Uploads')
                             })}
                                 onClick={this.pickDisplay.bind(this, 'New Uploads')}>
                                 {/*This is using the New Uploads Component because I am to tired to change it*/}
-                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'New Uploads')}>FRESH UPDATES</a>
+                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'New Uploads')}>RECENT UPDATES</a>
                             </li>
 
                             <li className={classnames('nav-item', {
                                 'active': this.checkView('Popular')
                             })}
                                 onClick={this.pickDisplay.bind(this, 'Popular')}>
-                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Popular')}>POPULAR</a>
+                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Popular')}>POPULAR COMICS</a>
+                            </li>
+
+                            <li className={classnames('nav-item', {
+                                'active': this.checkView('Fresh Update')
+                            })}
+                                onClick={this.pickDisplay.bind(this, 'Fresh Update')}>
+                                {/*This is using the Fresh Update Component because I am to tired to change it*/}
+                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Fresh Update')}>NEW UPLOADS</a>
                             </li>
 
                         </ul>

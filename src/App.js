@@ -30,6 +30,12 @@ import ScrollToTopRoute from './components/common/ScrollToTop';
 
 import Navbar from './components/layout/Navbar';
 
+import Toolbar from './components/layout/Toolbar';
+
+import SideDrawer from './components/layout/SideDrawer';
+
+import Backdrop from './components/layout/Backdrop';
+
 import Footer from './components/layout/Footer';
 
 import Home from './components/home/Home';
@@ -99,47 +105,93 @@ if (localStorage.token) {
 
 class App extends Component {
 
+    state = {
+      sideDrawerOpen: false
+    };
+    /*constructor(props) {
+        super(props);
+
+        this.state = {
+            sideDrawerOpen: false
+        };
+
+        this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
+
+    }
+*/
+    drawerToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+        });
+    };
+
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false})
+    }
+
   render() {
 
-    return (
+      let sideDrawer;
+      let backdrop;
+
+      if (this.state.sideDrawerOpen) {
+          sideDrawer = <SideDrawer/>;
+          backdrop = <Backdrop click={this.backdropClickHandler}/>;
+      }
+
+
+      return (
         <Provider store={ store }>
 
           <Router>
 
-              <Navbar/>
+              {/*<div style={{height: '100%'}}>*/}
 
-              <Route exact path='/' component={Home} />
+                  <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
 
-              <div>
+                  {/*<Toolbar drawerClickHandler={this.drawerToggleClickHandler} />*/}
 
-                  <Switch>
-                  <Route  path='/home' component={Home} />
+                  {/*{ sideDrawer }*/}
 
-                  <Route  path='/login' component={Login} />
+                  <SideDrawer show={this.state.sideDrawerOpen} />
 
-                  <Route  path='/create-account' component={Register} />
+                  { backdrop }
 
-                  <PrivateRoute  path='/dashboard' component={Dashboard} />
+                  <Route exact path='/' component={Home} />
 
-                  <Route  path='/comic/:id' component={ComicWithChapter} />
+                  <div>
 
-                  <Route  path='/search/comicTitle' component={SearchedComics} />
+                      <Switch>
 
-                  <Route  path='/comics/chapter/:id' component={SingleComic} />
+                      <Route  path='/home' component={Home} />
 
-                  <Route  path='/about-us' component={AboutUs} />
+                      <Route  path='/login' component={Login} />
 
-                  <Route  path='/contact-us' component={ContactUs} />
+                      <Route  path='/create-account' component={Register} />
+
+                      <PrivateRoute  path='/dashboard' component={Dashboard} />
+
+                      <Route  path='/comic/:id' component={ComicWithChapter} />
+
+                      <Route  path='/search/comicTitle' component={SearchedComics} />
+
+                      <Route  path='/comics/chapter/:id' component={SingleComic} />
+
+                      <Route  path='/about-us' component={AboutUs} />
+
+                      <Route  path='/contact-us' component={ContactUs} />
 
 
-                  <Route path='/404' component={NotFound} />
+                      <Route path='/404' component={NotFound} />
 
-                  {/*<Redirect path='*' to='/404'/>*/}
+                      {/*<Redirect path='*' to='/404'/>*/}
 
-                  </Switch>
-              </div>
+                      </Switch>
+                  </div>
 
-              <Footer/>
+                  <Footer/>
+
+              {/*</div>*/}
 
           </Router>
 

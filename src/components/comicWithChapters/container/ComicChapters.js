@@ -22,12 +22,12 @@ class ComicChapters extends Component {
         const { comicChapterWithOne } = this.props;
 
         let setOfChapters = comicChapterWithOne.map((comic) =>
-                <tr key={comic._id}>
+            <tr key={comic._id}>
                     <th onClick={this.addingToView.bind(this, comic.comicTitle, username)} scope="row"><Link to={`/comics/chapter/${comic._id}`}  className='myLink'>1</Link></th>
                     <td onClick={this.addingToView.bind(this, comic.comicTitle, username)} ><Link to={`/comics/chapter/${comic._id}`} className='myLink'>{comic.comicTitle}</Link></td>
                     <td onClick={this.addingToView.bind(this, comic.comicTitle, username)} ><Link to={`/comics/chapter/${comic._id}`} className='myLink'><Moment format='DD|MM|YYYY'>{comic.uploadDate}</Moment></Link></td>
                     {/*<td onClick={this.addingToView.bind(this, comic.comicTitle, username)} ><Link to={`/comics/chapter/${comic._id}`} className='myLink'>{comic.viewsCount}</Link></td>*/}
-                </tr>
+            </tr>
         );
 
         return (

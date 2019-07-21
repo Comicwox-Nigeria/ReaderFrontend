@@ -25,26 +25,26 @@ class NewUploads extends React.Component {
             // console.log(recommendedComics.length);
             if (popularComics.length > 13) {
 
-                let newUpdate = popularComics.slice(0, 18);
+                let newUpdate = popularComics.slice(0, 27);
 
                 setOfFreshComics = newUpdate.map((comic) => {
                     if (comic === null) {
                         return <div key={Math.floor((Math.random() * 100) + 1)} style={{ paddingBottom: '18px' }}>
                             <Link>
-                                <img src={ImagePlaceholder} alt='Comic Cover' className='filter-image'/>
-                                <p>Empty</p>
-                                <p>Empty</p>
-                                <span>Empty</span>
+                                <img src={ImagePlaceholder} alt='Cover' className='filter-image'/>
+                                <p className='comic-p'>Empty</p>
+                                <p className='comic-p'>Empty</p>
+                                <span className='comic-p'>Empty</span>
                             </Link>
                         </div>
 
                     } else {
                         return <div key={comic._id}  style={{ paddingBottom: '18px' }}>
                             <Link to={`/comic/${comic._id}`}>
-                                <img src={comic.comicImage}  alt='Comic Cover' className='filter-image'/>
-                                <p>{comic.comicTitle}</p>
-                                <p>{comic.studioName}</p>
-                                <span>{comic.viewsCount}</span>
+                                <img src={comic.comicImage}  alt='Cover' className='filter-image'/>
+                                <p className='comic-p'>{comic.comicTitle}</p>
+                                <p className='comic-p'>{comic.studioName}</p>
+                                <span className='comic-p'>{comic.viewsCount}</span>
                             </Link>
                         </div>
 
