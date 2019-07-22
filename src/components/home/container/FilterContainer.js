@@ -19,7 +19,7 @@ class SimpleSlider extends React.Component {
 
         this.state = {
             expandme: false,
-            display: 'New Uploads',
+            display: 'Popular',
             search: ''
         };
 
@@ -115,7 +115,7 @@ class SimpleSlider extends React.Component {
                             })}
                                 onClick={this.pickDisplay.bind(this, 'Fresh Update')}>
                                 {/*This is using the Fresh Update Component because I am to tired to change it*/}
-                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Fresh Update')}>NEW UPLOADS</a>
+                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Fresh Update')}>NEW COMICS</a>
                             </li>
 
                         </ul>
