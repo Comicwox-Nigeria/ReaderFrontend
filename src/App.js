@@ -145,6 +145,7 @@ class App extends Component {
 
           <Router>
 
+              <div className='no-overflow'>
               {/*<div style={{height: '100%'}}>*/}
 
                   <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -190,6 +191,8 @@ class App extends Component {
                   </div>
 
                   <Footer/>
+
+              </div>
 
               {/*</div>*/}
 

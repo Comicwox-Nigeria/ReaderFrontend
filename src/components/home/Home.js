@@ -58,20 +58,23 @@ class Home extends Component {
 
         return (
             <React.Fragment>
+                <div className='no-overflow'>
 
-                <Slider/>
+                    <Slider/>
 
-                { isLoadingFilter }
+                    { isLoadingFilter }
 
-                <br/>
-                <br/>
+                    <br/>
+                    <br/>
 
-                { isLoadingFeatured }
+                    { isLoadingFeatured }
 
-                <hr/>
+                    <hr/>
 
-                { checkAuth }
-                {/*<Recommended/>*/}
+                    { checkAuth }
+                    {/*<Recommended/>*/}
+
+                </div>
 
             </React.Fragment>
         );
