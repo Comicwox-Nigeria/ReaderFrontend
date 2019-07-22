@@ -96,18 +96,18 @@ class SimpleSlider extends React.Component {
                         <ul className="mr-auto my-filters" >
 
                             <li className={classnames('nav-item', {
+                                'active': this.checkView('Popular')
+                            })}
+                                onClick={this.pickDisplay.bind(this, 'Popular')}>
+                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Popular')}>POPULAR COMICS</a>
+                            </li>
+
+                            <li className={classnames('nav-item', {
                                 'active': this.checkView('New Uploads')
                             })}
                                 onClick={this.pickDisplay.bind(this, 'New Uploads')}>
                                 {/*This is using the New Uploads Component because I am to tired to change it*/}
                                 <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'New Uploads')}>RECENT UPDATES</a>
-                            </li>
-
-                            <li className={classnames('nav-item', {
-                                'active': this.checkView('Popular')
-                            })}
-                                onClick={this.pickDisplay.bind(this, 'Popular')}>
-                                <a className="nav-link" style={{ color: 'white' }} onClick={this.pickDisplay.bind(this, 'Popular')}>POPULAR COMICS</a>
                             </li>
 
                             <li className={classnames('nav-item', {

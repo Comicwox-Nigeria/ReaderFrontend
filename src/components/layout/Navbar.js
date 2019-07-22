@@ -25,7 +25,7 @@ class Navbar extends Component {
 
         if (isAuthenticated) {
             navbarList = (
-                <li><Link to="/dashboard"><span className="my-supposed-button">ACCOUNT</span></Link></li>
+                <li><Link to="/dashboard"><span className="my-supposed-button">DASHBOARD</span></Link></li>
             );
         } else {
             navbarList = (

@@ -2,9 +2,22 @@ body {
     overflow-x: hidden;
     margin:0;
     padding:0;
-    background:#fff;
+    background:#fff;width: auto;
     height: 100%;
 }
+
+
+@media only screen and (max-width: 478px){
+    body {
+        overflow-x: hidden;
+        /*auto*/
+        margin:0;
+        padding:0;
+        background:#fff;
+        height: 100%;
+    }
+}
+
 
 /* ====================================
 
@@ -1399,6 +1412,7 @@ body {
     }
 }
 
+
 @media screen and (min-width: 1264px) and (max-width: 1309px){
     .regular {
         margin-top: 50px;
@@ -2543,7 +2557,7 @@ body {
     left: 100px;
     border-radius: 5px;
     top: 148px;
-    z-index: 98;
+    z-index: 97;
     background-color: red;
     padding: 0 5px;
     color: #FFFFFF;

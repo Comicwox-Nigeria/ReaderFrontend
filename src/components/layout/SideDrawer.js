@@ -25,7 +25,7 @@ class SideDrawer extends Component {
 
         if (isAuthenticated) {
             navbarList = (
-                <li><Link to="/dashboard" className='side-link'><span className="my-supposed-button-side-drawer">ACCOUNT</span></Link></li>
+                <li><Link to="/dashboard" className='side-link'><span className="my-supposed-button-side-drawer">DASHBOARD</span></Link></li>
             );
         } else {
             navbarList = (
