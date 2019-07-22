@@ -29,7 +29,7 @@ class Navbar extends Component {
             );
         } else {
             navbarList = (
-                <li><Link to="/login"><span className="my-supposed-button">LOGIN</span></Link></li>
+                <li className='linkyy'><Link to="/login"><span className="my-supposed-button">LOGIN</span></Link></li>
             );
         }
 
@@ -45,11 +45,11 @@ class Navbar extends Component {
                         <div className='spacer'/>
                         <div className='toolbar_navigation_items'>
                             <ul className='first-layer-nav'>
-                                <li><Link to='/'>HOME</Link></li>
+                                <li className='linkyy'><Link to='/' >HOME</Link></li>
                                 {/*<li><Link to="/studios">STUDIOS</Link></li>*/}
-                                <li><a href="http://comicwoxblog.com/" target="_blank">BLOG</a></li>
-                                <li><Link to="/about-us">ABOUT</Link></li>
-                                <li><Link to="/contact-us">CONTACT</Link></li>
+                                <li className='linkyy'><a href="http://comicwoxblog.com/" target="_blank">BLOG</a></li>
+                                <li className='linkyy'><Link to="/about-us">ABOUT</Link></li>
+                                <li className='linkyy'><Link to="/contact-us">CONTACT</Link></li>
                                 {navbarList}
                             </ul>
                         </div>

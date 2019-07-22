@@ -23,6 +23,9 @@ body {
 }
 
 
+/*.linkyy Link{*/
+    /*font-size: 30px !important;*/
+/*}*/
 /* ====================================
 
         NAVIGATION BAR STYLING
@@ -225,6 +228,7 @@ body {
 .first-layer-nav  {
     text-align:right;
 }
+
 
 .first-layer-nav li {
     padding-top: 0px;
