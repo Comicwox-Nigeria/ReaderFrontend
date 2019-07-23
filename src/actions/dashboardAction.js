@@ -14,13 +14,15 @@ import {tokenConfig} from "./authAction";
 
 export const editProfile = (profileData, history) => (dispatch, getState) => {
     axios.post(`http://206.189.94.96/api/readersRoutes/readerAuth/editProfile`, profileData, tokenConfig(getState))
-        .then(res => window.location.reload())
-        // .then(res => {
-        //     dispatch({
-        //         type: GET_RECOMMENDED,
-        //         payload: res.data
-        //     })
-        // })
+        .then(res =>
+            dispatch(window.location.reload())
+        )
+        .then(res => {
+            dispatch({
+                type: GET_RECOMMENDED,
+                payload: res.data
+            })
+        })
         .catch(err => {
             dispatch({
                 type: GET_ERRORS,

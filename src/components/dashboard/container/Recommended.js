@@ -216,9 +216,9 @@ class Recommended extends Component {
                     }
                 });
             }
-            // else {
-                // window.location.reload();
-            // }
+            else {
+
+            }
         }
 
 
