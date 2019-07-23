@@ -209,8 +209,8 @@ export const getChapterOneAndSubChapters = (id) => dispatch => {
 export const getComicChapters = (id) => dispatch => {
 
     dispatch(setLoading());
-
     axios.get(`http://206.189.94.96/api/comicRoutes/comic/getChapters/${id}`)
+    // axios.get(`http://localhost:8080/api/comicRoutes/comic/getChapters/${id}`)
         .then(res => {
             dispatch({
                 type: GET_COMIC_WITH_SUB_COMIC_CHAPTERS,
