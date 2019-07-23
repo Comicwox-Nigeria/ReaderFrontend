@@ -21,8 +21,8 @@ export const registerReader = (readerData, history) => dispatch => {
 
 
 // Edit Profile Of User
-export const editReaderProfile = (readerData, history) => dispatch => {
-    axios.post(`http://206.189.94.96/api/readersRoutes/readerAuth/editProfile`, readerData)
+export const editReaderProfile = (readerData, history, getState) => dispatch => {
+    axios.post(`http://localhost:8080/api/readersRoutes/readerAuth/editProfile`, readerData, tokenConfig(getState))
         .then(res => history.push('/dashboard'))
         .catch(err => {
             dispatch({

@@ -34,11 +34,15 @@ class Subscription extends React.Component {
 
         const { subscribedComics } = this.props;
 
-        let subscribedComicsNew;
+        let setOfSubComics;
+
+        console.log(subscribedComics);
+
+        if (subscribedComics.length > 18) {
+            let subscribedComicsNew;
 
         subscribedComicsNew = this.shuffle(subscribedComics);
 
-        let setOfSubComics;
         // let setOfSubComics2;
 
         if (subscribedComicsNew.error === true) {
@@ -46,72 +50,46 @@ class Subscription extends React.Component {
             // setOfSubComics2 = <h6 className='text-center'>{subscribedComicsNew.message}</h6>;
         }
 
-        else {
+            else {
 
-            if (subscribedComicsNew.length < 1) {
-                console.log('No comic')
-            } else {
-                if (subscribedComicsNew.length > 1) {
-
-                    let newUpdate = subscribedComicsNew.slice(0, 18);
-
-                    setOfSubComics = newUpdate.map((comic) => {
-                        if (comic === null) {
-                            return <div key={Math.floor((Math.random() * 100) + 1)} style={{ paddingBottom: '18px' }}>
-                                <Link>
-                                    <img src={ImagePlaceholder} alt='Comic Cover' className='filter-image'/>
-                                    <p>Empty</p>
-                                    <p>Empty</p>
-                                    <span>Empty</span>
-                                </Link>
-                            </div>
-
-                        } else {
-                            return <div key={comic._id} style={{ paddingBottom: '18px' }}>
-                                <Link to={`/comic/${comic._id}`}>
-                                    <img src={comic.comicImage} alt='Comic Cover' className='filter-image'/>
-                                    <p>{comic.comicTitle}</p>
-                                    <p>{comic.studioName}</p>
-                                    <span>{comic.viewsCount}</span>
-                                </Link>
-                            </div>
-
-                        }
-                    });
-
-
-                    /*let newUpdate2 = subscribedComicsNew.slice(8, 15);
-
-                    setOfSubComics2 = newUpdate2.map((comic) => {
-                        if (comic === null) {
-                            return <div key={Math.floor((Math.random() * 100) + 1)}>
-                                <Link>
-                                    <img src={ImagePlaceholder} alt='Comic Cover' className='filter-image'/>
-                                    <p>Empty</p>
-                                    <p>Empty</p>
-                                    <span>Empty</span>
-                                </Link>
-                            </div>
-
-                        } else {
-                            return <div key={comic._id}>
-                                <Link to={`/comic/${comic._id}`}>
-                                    <img src={comic.comicImage} alt='Comic Cover' className='filter-image'/>
-                                    <p>{comic.comicTitle}</p>
-                                    <p>{comic.studioName}</p>
-                                    <span>{comic.viewsCount}</span>
-                                </Link>
-                            </div>
-
-                        }
-                    });*/
+                if (subscribedComicsNew.length < 1) {
+                    console.log('No comic')
                 } else {
-                    setOfSubComics = <h6 className='text-center'>No Subscription</h6>;
-                    // setOfSubComics2 = <h6 className='text-center'>No Subscription</h6>;
+
+                        let newUpdate = subscribedComicsNew.slice(0, 18);
+
+                        setOfSubComics = newUpdate.map((comic) => {
+                            if (comic === null) {
+                                return <div key={Math.floor((Math.random() * 100) + 1)} style={{ paddingBottom: '18px' }}>
+                                    <Link>
+                                        <img src={ImagePlaceholder} alt='Comic Cover' className='filter-image'/>
+                                        <p>Empty</p>
+                                        <p>Empty</p>
+                                        <span>Empty</span>
+                                    </Link>
+                                </div>
+
+                            } else {
+                                return <div key={comic._id} style={{ paddingBottom: '18px' }}>
+                                    <Link to={`/comic/${comic._id}`}>
+                                        <img src={comic.comicImage} alt='Comic Cover' className='filter-image'/>
+                                        <p>{comic.comicTitle}</p>
+                                        <p>{comic.studioName}</p>
+                                        <span>{comic.viewsCount}</span>
+                                    </Link>
+                                </div>
+
+                            }
+                        });
+
                 }
+
             }
 
+        } else {
+            setOfSubComics = <h6>You do not have any subscriptions because you have not filled your recommended comic genres on your dashboard</h6>
         }
+
 
         return (
             <React.Fragment>
@@ -119,9 +97,6 @@ class Subscription extends React.Component {
                 <h3 className='recommended-text'>SUBSCRIPTION</h3>
 
                 <div className='myrow'>
-                    {/*<div className='col-md-1 regular4'>*/}
-                    {/*<img src={PrevIcon} alt='Prev Icon'/>*/}
-                    {/*</div>*/}
 
                     <div className="regular">
 
@@ -129,9 +104,6 @@ class Subscription extends React.Component {
 
                     </div>
 
-                    {/*<div className='col-md-1 regular3'>*/}
-                    {/*<img src={NextIcon} alt='Next Icon'/>*/}
-                    {/*</div>*/}
                 </div>
 
 

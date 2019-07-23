@@ -25,8 +25,8 @@ class Dashboard extends Component {
         let isLoadingRecommended, isLoadingSubscription;
 
         if (loading) {
-            isLoadingSubscription = <Spinner/>
-            isLoadingRecommended = <Spinner/>
+            isLoadingSubscription = <Spinner/>;
+            isLoadingRecommended = <Spinner/>;
         } else {
             isLoadingSubscription = <Subscription subscribedComics={subscribedComics} />
             isLoadingRecommended = <Recommended recommendedComics={recommendedComics} />
@@ -44,8 +44,6 @@ class Dashboard extends Component {
                 <br/>
 
                 { isLoadingRecommended }
-
-                {this.onUnload}
 
             </div>
         );

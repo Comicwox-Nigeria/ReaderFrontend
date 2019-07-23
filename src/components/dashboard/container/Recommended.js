@@ -49,8 +49,7 @@ class Recommended extends Component {
             genre3: this.state.genre3
         };
 
-        this.props.editProfile(profileData);
-            //, this.props.history);
+        this.props.editProfile(profileData, this.props.history);
 
     }
 
@@ -62,6 +61,8 @@ class Recommended extends Component {
         const { errors } = this.state;
 
         let setOfRecommendedComics;
+
+
 
         if (recommendedComics.error === true){
 
@@ -201,19 +202,23 @@ class Recommended extends Component {
 
             // console.log(recommendedComics);
 
-            setOfRecommendedComics = recommendedComics.map((comic) => {
-                if (comic === null) {
-                    return <div key={Math.floor((Math.random() * 100) + 1)} className='col-md-4 col-lg-4 col-xs-12 col-sm-4 recommended-comic' >
-                        <Link><img className='cover-image' src={ImagePlaceholder} alt='Cover' style={{ backgroundColor: 'black' }} /></Link>
-                    </div>
+            if (recommendedComics.length > 2) {
+                setOfRecommendedComics = recommendedComics.map((comic) => {
+                    if (comic === null) {
+                        return <div key={Math.floor((Math.random() * 100) + 1)} className='col-md-4 col-lg-4 col-xs-12 col-sm-4 recommended-comic' >
+                            <Link><img className='cover-image' src={ImagePlaceholder} alt='Cover' style={{ backgroundColor: 'black' }} /></Link>
+                        </div>
 
-                } else {
-                    return <div key={comic._id} className='col-md-4 col-lg-4 col-xs-12 col-sm-4 recommended-comic' >
-                        <Link to={`/comic/${comic._id}`} ><img className='cover-image' src={comic.comicImage} alt='Cover' style={{ backgroundColor: 'black' }} /></Link>
-                    </div>
-                }
-            });
-
+                    } else {
+                        return <div key={comic._id} className='col-md-4 col-lg-4 col-xs-12 col-sm-4 recommended-comic' >
+                            <Link to={`/comic/${comic._id}`} ><img className='cover-image' src={comic.comicImage} alt='Cover' style={{ backgroundColor: 'black' }} /></Link>
+                        </div>
+                    }
+                });
+            }
+            // else {
+                // window.location.reload();
+            // }
         }
 
 
