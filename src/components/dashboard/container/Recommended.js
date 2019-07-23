@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { editProfile } from "../../../actions/dashboardAction";
 
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import ImagePlaceholder from "../../common/placeholder.jpg";
 
 
@@ -62,12 +62,7 @@ class Recommended extends Component {
 
         let setOfRecommendedComics;
 
-
-
         if (recommendedComics.error === true){
-
-            console.log(recommendedComics);
-            // setOfRecommendedComics = <h6 className='text-center'>{recommendedComics.message}</h6>;
 
             setOfRecommendedComics =
                 <form className='form-inline' onSubmit={this.onSubmitComic}>
@@ -200,8 +195,6 @@ class Recommended extends Component {
 
         } else {
 
-            // console.log(recommendedComics);
-
             if (recommendedComics.length > 2) {
                 setOfRecommendedComics = recommendedComics.map((comic) => {
                     if (comic === null) {
@@ -215,9 +208,6 @@ class Recommended extends Component {
                         </div>
                     }
                 });
-            }
-            else {
-
             }
         }
 

@@ -36,8 +36,6 @@ class Subscription extends React.Component {
 
         let setOfSubComics;
 
-        console.log(subscribedComics);
-
         if (subscribedComics.length > 18) {
             let subscribedComicsNew;
 
